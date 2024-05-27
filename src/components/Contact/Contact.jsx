@@ -1,8 +1,16 @@
+// Імпортуємо хук
+import { useDispatch } from 'react-redux';
+// Імпортуємо генератор екшену
+import { deleteContact } from '../../redux/actions';
+
 import css from './Contact.module.css';
 import { FaUser } from 'react-icons/fa6';
 import { FaPhone } from 'react-icons/fa6';
 
-export default function Contact({ name, number, id, onDelete }) {
+export default function Contact({ name, number, id }) {
+  const dispatch = useDispatch();
+  const handleDelete = () => dispatch(deleteContact(id));
+
   return (
     <>
       <div className={css.contactBox}>
@@ -15,7 +23,7 @@ export default function Contact({ name, number, id, onDelete }) {
           {number}
         </p>
       </div>
-      <button onClick={() => onDelete(id)}>Delete</button>
+      <button onClick={handleDelete}>Delete</button>
     </>
   );
 }

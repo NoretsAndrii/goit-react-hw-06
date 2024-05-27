@@ -28,10 +28,10 @@ function App() {
     localStorage.setItem('savedContacts', JSON.stringify(contacts));
   }, [contacts]);
 
-  const searchByName = contacts.filter(({ name }) => {
-    return name.toLowerCase().includes(inputValue.toLowerCase());
-  });
-  console.log(contacts);
+  // const searchByName = contacts.filter(({ name }) => {
+  //   return name.toLowerCase().includes(inputValue.toLowerCase());
+  // });
+  // console.log(contacts);
 
   return (
     <>
@@ -39,7 +39,7 @@ function App() {
         <h1>Phonebook</h1>
         <ContactForm contacts={contacts} setContacts={setContacts} />
         <SearchBox value={inputValue} onInput={setInputValue} />
-        <ContactList contacts={searchByName} onDelete={handleDelete} />
+        <ContactList onDelete={handleDelete} />
       </div>
     </>
   );
