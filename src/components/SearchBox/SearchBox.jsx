@@ -3,13 +3,11 @@ import { useSelector } from 'react-redux';
 
 import css from './SearchBox.module.css';
 
-// Імпортуємо хук
 import { useDispatch } from 'react-redux';
-// Імпортуємо генератор екшену
-import { setFilter } from '../../redux/actions';
+import { setFilter, selectNameFilter } from '../../redux/filtersSlice';
 
 export default function SearchBox() {
-  const filter = useSelector(state => state.filters.name);
+  const filter = useSelector(selectNameFilter);
   const searchNameFieldId = useId();
   const dispatch = useDispatch();
 

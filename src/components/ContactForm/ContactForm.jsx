@@ -6,7 +6,7 @@ import css from './ContactForm.module.css';
 // Імпортуємо хук
 import { useDispatch } from 'react-redux';
 // Імпортуємо генератор екшену
-import { addContact } from '../../redux/actions';
+import { addContact } from '../../redux/contactsSlice';
 
 const contactFormSchema = Yup.object().shape({
   name: Yup.string()
