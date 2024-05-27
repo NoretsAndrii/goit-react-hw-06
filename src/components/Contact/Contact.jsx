@@ -1,6 +1,4 @@
-// Імпортуємо хук
 import { useDispatch } from 'react-redux';
-// Імпортуємо генератор екшену
 import { deleteContact } from '../../redux/contactsSlice';
 
 import css from './Contact.module.css';
